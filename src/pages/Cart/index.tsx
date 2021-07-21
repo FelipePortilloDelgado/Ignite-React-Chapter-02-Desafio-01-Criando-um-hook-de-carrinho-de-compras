@@ -40,14 +40,14 @@ const Cart = (): JSX.Element => {
   function handleProductIncrement(product: Product) {
     // TODO
     const productId = product.id;
-    const amount = 1;
+    const amount = product.amount + 1;
     updateProductAmount({productId, amount});
   }
 
   function handleProductDecrement(product: Product) {
     // TODO
     const productId = product.id;
-    const amount = -1;
+    const amount = product.amount - 1;
     updateProductAmount({productId, amount});    
   }
 
@@ -59,8 +59,9 @@ const Cart = (): JSX.Element => {
   return (
     <Container>
       {cartFormatted.map(product => { 
+          product.id = product.id + 30;
         return (             
-          <ProductTable>
+          <ProductTable key={product.id}>
             <thead>
               <tr>
                 <th aria-label="product image" />
