@@ -59,7 +59,7 @@ const Cart = (): JSX.Element => {
   return (
     <Container>
       {cartFormatted.map(product => { 
-          product.id = product.id + 30;
+          //product.id = product.id + 30;
         return (             
           <ProductTable key={product.id}>
             <thead>
