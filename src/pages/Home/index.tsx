@@ -55,14 +55,13 @@ const Home = (): JSX.Element => {
 
   return (
     <ProductList>
+      
       {products.map(product => (
         <li key={product.id}>
           <img src={product.image} alt={product.title} />
           <strong>{product.title}</strong>
           <span>
-            {
-              product.price
-            }
+            {formatPrice(product.price)}
           </span>
           <button
             type="button"

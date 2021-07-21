@@ -43,6 +43,20 @@ export const ProductTable = styled.table`
     border-bottom: 1px solid #eee;
   }
 
+  tbody td:nth-child(1) {
+    width: 120px;
+  }
+  tbody td:nth-child(3) {
+    width: 50px;
+  }
+  tbody td:nth-child(4) {
+    width: 100px;
+  }   
+  tbody td:nth-child(5) {
+    width: 40px;
+  }
+
+
   img {
     height: 100px;
   }
