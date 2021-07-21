@@ -62,8 +62,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       // TODO
       await verifyProduct(productId);
 
-
-
       const product = (await api.get<Product>(`/products/${productId}`)).data;
 
       const productExistsInCart = cart.find((product) => product.id === productId);
@@ -107,10 +105,11 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     }
   };
 
-  const removeProduct = async (productId: number) => {
+  const removeProduct = (productId: number) => {
     try {
       // TODO
-      await verifyProduct(productId);
+      //await verifyProduct(productId);
+      api.get(`/products/${productId}`);
 
       const newCart = cart.filter((product) => product.id !== productId);
 
